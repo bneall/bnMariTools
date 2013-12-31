@@ -263,7 +263,7 @@ class ExportQtGui(QtGui.QWidget):
 	
 	def resize(self):
 		'''Resizes tree columns'''
-		for column in range(self.exportList.columnCount()):
+		for column in range(self.exportList.columnCount):
 			self.exportList.resizeColumnToContents(column)
 	
 	def addObject(self):
@@ -439,11 +439,11 @@ class ExportQtGui(QtGui.QWidget):
 		exportMaps(objDict, export_path, export_format, template)
 
 
-##------------------------------------------------------------------------------------------------------------------------------
+##-------------------------------------------------------------------------------------------------
 ## Mari UI Init ##
-##------------------------------------------------------------------------------------------------------------------------------
+##-------------------------------------------------------------------------------------------------
 exportUI =  ExportQtGui()
-#exportUI.setDisabled(True)
+exportUI.setDisabled(True)
 mari.palettes.create('bnExporter', exportUI)
 exportPalette = mari.actions.find('/Mari/Palettes/bnExporter')
 exportPalette.setIconPath('%s/ExportFile.png' % icon_path)
