@@ -47,7 +47,7 @@ def loadShaders():
         #Shader info
         shaderPath= full_shader_path.replace(default_shader_path, "")
         shaderType = shaderPath.split("/")[1]
-        shaderName = root[1].text
+        shaderName = root.find('DefaultName').text
         #Register info
         nodeName = "/%s/Custom/%s" % (shaderType, shaderName)
         nodePath = "%s/%s" % (full_shader_path, shader)
