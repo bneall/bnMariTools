@@ -2,6 +2,8 @@ import mari
 import os
 import xml.etree.ElementTree as ET
 
+mari_version = '%d.%d' % (mari.app.version().major(), mari.app.version().minor())
+
 base_path = os.path.dirname(__file__)
 default_shader_path = '%s/NodeLibrary' % base_path
 default_lib_path = '%s/FunctionLibrary' % base_path
@@ -69,10 +71,11 @@ def loadShaders():
         except Exception as exc:
             print 'Error Registering %s Node : %s : %s' % (shaderType, shaderName, str(exc))
 
-##Load All
-print '\nInitializing Shader Libraries.....'
-print '-----------------------------------------'
-loadLibraries()
-print '\nLoading Shaders.....'
-print '-----------------------------------------'
-loadShaders()
+if mari_version == '2.5':
+    ##Load All
+    print '\nInitializing Shader Libraries.....'
+    print '-----------------------------------------'
+    loadLibraries()
+    print '\nLoading Shaders.....'
+    print '-----------------------------------------'
+    loadShaders()
