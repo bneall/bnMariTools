@@ -48,6 +48,7 @@ def loadShaders():
 
         #Shader info
         shaderPath= full_shader_path.replace(default_shader_path, "")
+        shaderPath = shaderPath.replace("\\", "/")
         shaderType = shaderPath.split("/")[1]
         shaderName = root.find('DefaultName').text
         #Register info
